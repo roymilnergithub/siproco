@@ -1,0 +1,49 @@
+<div class="container">
+	<div class="card">
+		<div class="card-header">
+			<!--<h3>AGREGAR UNIDADES</h3>
+			<hr>-->
+		</div>
+		<div class="card-block">
+			<fieldset>
+            	<legend><h4>INGRESAR NUEVOS INSUMOS</h4></legend>
+				<form novalidate [formGroup]="form" class="form-inline">
+					<div class="form-group col-md-6">
+						<label style="padding-right: 10px;" for="nombre">Nombre Insumo: </label>
+						<input class="form-control" id="nombre" formControlName="nombre" 
+						type="text" style="width: 75%;" [(ngModel)]="nombreInsumo" 
+						#input (input)="input.value=$event.target.value.toUpperCase()"
+						(keypress)="omitir_caracteres_especiales($event)">
+					</div>
+					<div class="form-group col-md-4">
+						<label style="padding-right: 10px;" for="marca">Marca: </label>
+						<select class="form-control" id="marca" formControlName="marca"
+							style="width: 80%; height: 34px;" [(ngModel)]="marcaSeleccionada.id_marca" >
+							<option *ngFor="let m of listaDeMarcas" [ngValue]="m"> {{m.nombre}}</option>
+						</select>
+					</div>
+
+					<button class="btn btn-success col-md-2" [disabled]="!verificarCantidadLetras()"
+						  (click)="btn_registrarInsumo()"> Registrar 
+					</button>
+				</form>
+			</fieldset>
+
+		</div>
+		<div class="card-block">
+			<hr>
+			<ng2-smart-table [settings]="settings" [source]="lista"></ng2-smart-table>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+

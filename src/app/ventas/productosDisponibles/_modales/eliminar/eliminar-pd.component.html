@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">ESTA SEGURO QUE DESEA ELIMINAR?</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-md-4"> <label>ID_LOCAL: </label>  </div>
+    <div class="col-md-8"> {{venEntrada.id_local}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"> <label>ID_PRODUCTO: </label>  </div>
+    <div class="col-md-8"> {{venEntrada.id_producto}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"> <label>CANTIDAD_PRODUCIDA: </label>  </div>
+    <div class="col-md-8"> {{venEntrada.cantidad_producida}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"> <label>P_PRODUCCION: </label>  </div>
+    <div class="col-md-8"> {{venEntrada.p_produccion}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"> <label>P_VENTA: </label>  </div>
+    <div class="col-md-8"> {{venEntrada.p_venta}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"> <label>FECHA_ENTRADA: </label>  </div>
+    <div class="col-md-8"> {{venEntrada.fecha_entrada | date}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"> <label>FECHA_VENCIMIENTO: </label>  </div>
+    <div class="col-md-8"> {{venEntrada.fecha_vencimiento | date }} </div>
+  </div>
+</div>
+<div class="modal-footer"> 
+      <button type="submit" class="btn btn-danger" (click)="eliminarProductoDisponible()" (click)="bsModalRef.hide()">ELIMINAR</button>
+</div>

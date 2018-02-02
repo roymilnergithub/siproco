@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">ESTA SEGURO QUE DESEA ELIMINAR?</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-md-4"> <label>ID_DISTRIBUIDOR: </label>  </div>
+    <div class="col-md-8"> {{ingresoInsumoAlmacen.id_distribuidor}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"> <label>ID_INSUMO: </label>  </div>
+    <div class="col-md-8"> {{ingresoInsumoAlmacen.id_insumo}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"> <label>CANTIDAD_COMPRADA: </label>  </div>
+    <div class="col-md-8"> {{ingresoInsumoAlmacen.cantidad_comprada}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"> <label>ID_UNIDAD: </label>  </div>
+    <div class="col-md-8"> {{ingresoInsumoAlmacen.id_unidad}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"> <label>PRECIO_COMPRA: </label>  </div>
+    <div class="col-md-8"> {{ingresoInsumoAlmacen.precio_compra}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"> <label>FECHA_ENTRADA: </label>  </div>
+    <div class="col-md-8"> {{ingresoInsumoAlmacen.fecha_entrada | date}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"> <label>FECHA_VENCIMIENTO: </label>  </div>
+    <div class="col-md-8"> {{ingresoInsumoAlmacen.fecha_vencimiento | date }} </div>
+  </div>
+</div>
+<div class="modal-footer"> 
+      <button type="submit" class="btn btn-danger" (click)="eliminarIngresoInsumoAlmacen()" (click)="bsModalRef.hide()">ELIMINAR</button>
+</div>

@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">ESTA SEGURO QUE DESEA ELIMINAR?</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-md-2"> <label>NOMBRE: </label>  </div>
+    <div class="col-md-10"> {{distribuidor.nombre}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"> <label>DIRECCION: </label>  </div>
+    <div class="col-md-10"> {{distribuidor.direccion}} </div>
+  </div>
+</div>
+<div class="modal-footer"> 
+      <button type="submit" class="btn btn-danger" (click)="eliminarDistribuidor()" (click)="bsModalRef.hide()" >ELIMINAR</button>
+</div>

@@ -1,0 +1,89 @@
+<div class="container">
+	<div class="card">
+		<div class="card-header">
+			<!--<h3>AGREGAR UNIDADES</h3>
+			<hr>-->
+		</div>
+		<div class="card-block">
+
+			<fieldset>
+            	<legend><h4>REGISTRAR NUEVOS PRODUCTOS DISPONIBLES</h4></legend>
+					<div class="form-group col-md-2">
+						<label style="padding-right: 10px;" for="id_local">id_local: </label>
+					</div>
+					<div class="form-group col-md-3">
+						<label style="padding-right: 10px;" for="id_producto">id_producto: </label>
+					</div>
+					<div class="form-group col-md-1">
+						<label style="padding-right: 10px;" for="cantidad_producida">cant_prod: </label>
+					</div>
+					<div class="form-group col-md-1">
+						<label style="padding-right: 10px;" for="p_produccion">p_prod: </label>
+					</div>
+					<div class="form-group col-md-1">
+						<label style="padding-right: 10px;" for="p_venta">p_venta: </label>
+					</div>
+					<div class="form-group col-md-2">
+						<label style="padding-right: 10px;" for="fecha_entrada">f_entrada: </label>
+					</div>
+					<div class="form-group col-md-2">
+						<label style="padding-right: 10px;" for="fecha_vencimiento">f_vencimiento: </label>
+					</div>
+
+					<div class="form-group col-md-2">
+						<select [(ngModel)]="local" style="width: 100%; height: 34px;">
+							<option *ngFor="let l of listaDeLocales" [ngValue]="l"> {{l.nombre}}</option>
+						</select>
+					</div>
+					<div class="form-group col-md-3">
+						<select [(ngModel)]="producto" style="width: 100%; height: 34px;">
+							<option *ngFor="let p of listaDeProductos" [ngValue]="p"> {{p.nombre}}</option>
+						</select>
+					</div>
+					<div class="form-group col-md-1">
+						<input class="form-control" style="width: 100%;" [(ngModel)]="cantidad_producida" type="number" min="0" max="5000" >
+					</div>
+					<div class="form-group col-md-1">
+						<input class="form-control" style="width: 100%;" [(ngModel)]="p_produccion" type="number" min="0" max="1000" >
+					</div>
+					<div class="form-group col-md-1">
+						<input class="form-control" style="width: 100%;" [(ngModel)]="p_venta" type="number" min="0" max="1000" >
+					</div>
+					<div class="form-group col-md-2">
+						<form #myForm="ngForm" novalidate>
+						    <my-date-picker name="mydateEntrada" [options]="fecha_entrada"
+						    (dateChanged)="fecEntradaChanged($event)" 
+						    [(ngModel)]="model_fecha_entrada" required></my-date-picker>
+						</form>
+					</div>
+					<div class="form-group col-md-2">
+						<form #myForm="ngForm" novalidate>
+						    <my-date-picker name="mydateVencimiento" [options]="fecha_vencimiento"
+						    (dateChanged)="fecVencimientoChanged($event)"
+						    [(ngModel)]="model_fecha_vencimiento" required></my-date-picker>
+						</form>
+					</div>
+					<div class="form-group col-md-12">
+						<br>
+						<label class="form-group col-md-10"></label>
+						<button class="btn btn-success col-md-2" [disabled]="!verificarCantidadLetras()"
+						  (click)="btn_registrarProductoDisponible()"> Registrar 
+						</button>
+					</div>
+			</fieldset>
+
+		</div>
+		<div class="card-block">
+			<hr>
+			<ng2-smart-table [settings]="settings" [source]="lista"></ng2-smart-table>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+

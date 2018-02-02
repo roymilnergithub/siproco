@@ -1,0 +1,7 @@
+:host /deep/ ng2-smart-table  {
+	font-size:16px
+}
+:host /deep/ tr,th {
+	text-align: left;
+	height: 5px;
+}

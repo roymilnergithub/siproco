@@ -1,0 +1,74 @@
+<div class="container">
+	<div class="card">
+		<div class="card-header">
+			<!--<h3>AGREGAR MARCAS</h3>
+			<hr>-->
+		</div>
+		<div class="card-block">
+
+			<fieldset>
+            	<legend><h4>INGRESAR NUEVOS LOCALES</h4></legend>
+				<form novalidate [formGroup]="form" class="form-inline">
+					<div class="form-group col-md-7">
+						<label style="padding-right: 10px;" for="nombre">Nombre del Local: </label>
+						<input class="form-control" id="nombre" formControlName="nombre" 
+						type="text" style="width: 475px;" [(ngModel)]="nombreLocal" 
+						#input (input)="input.value=$event.target.value.toUpperCase()"
+						(keypress)="omitir_caracteres_especiales($event)"
+						>
+					</div>
+					<div class="form-group col-md-3">
+						<label style="padding-right: 10px;" for="direccion">Direccion: </label>
+						<input class="form-control" id="direccion" formControlName="direccion"
+						type="text" style="width: 150px;" [(ngModel)]="direccion" 
+						#input2 (input)="input2.value=$event.target.value.toUpperCase()"
+						(keypress)="omitir_caracteres_especiales($event)">
+					</div>
+					<button [disabled]="!verificarCantidadLetras()" class="btn btn-success col-md-2" (click)="btn_registrarLocal()"> Registrar </button>
+				</form>
+			</fieldset>
+
+		</div>
+		<div class="card-block">
+			<hr>
+			<ng2-smart-table [settings]="settings" [source]="lista"></ng2-smart-table>
+		</div>
+		<!--<a href="registro-marcas/#openModal">Click me to open modal window</a>-->
+
+	</div>
+
+</div>
+
+<!--
+<div id="openModal" class="modalWindow">
+    <div>
+        
+        <div class="modalHeader">
+            <h2>This is a sample modal window</h2>
+            <a href="#close" title="Close" class="close">X</a>
+        </div>
+        
+        <div class="modalContent">
+            <p>This is a sample modal window that can be created using CSS3 and HTML5.</p>
+            <p>Modal windows are used, among many others, to display login/register forms; advertisements; or just notifications to the user. They frequently contain critical information, that user must attend in order to return to the page.</p>
+        </div>
+        
+        <div class="modalFooter">
+            <a href="#cancel" title="Cancel" class="cancel">Cancel</a>
+            <a href="#ok" title="Ok" class="ok">Apply</a>
+            <p>Keep in mind that this is a demo</p>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+-->
+
+
+
+
+
+
+
+
+
+
